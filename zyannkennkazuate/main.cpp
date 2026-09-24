@@ -1,4 +1,4 @@
-#include<iostream>
+﻿#include<iostream>
 #include"janken.h"
 #include"kazuate.h"
 
@@ -8,7 +8,7 @@ int main()
 {
 	for (int i = 0;i < 10; ++i)
 	{
-		cout << "じゃんけんで遊ぶなら１を数当てゲームなら２を" << endl;
+		cout << "Choose 1 to play Rock-Paper-Scissors, or 2 for the number-guessing game." << endl;
 		int mode;
 		cin >> mode;
 		if (mode == 1)

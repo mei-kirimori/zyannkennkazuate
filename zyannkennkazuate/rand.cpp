@@ -1,5 +1,4 @@
-#pragma once
-#include<cstdlib>
+﻿#include<cstdlib>
 #include<ctime>
 #include"randkai.h"
 

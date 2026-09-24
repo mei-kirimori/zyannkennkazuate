@@ -9,19 +9,19 @@ int enemyHand()
 	return randkai() % 3;
 }
 
-handResult jankenResult(int a, int b)
+handResult jankenResult(hand plyer, hand enemy)
 {
-	if (a == b)
+	if (plyer == enemy)
 	{
 		return draw;
 	}
-	else if (a == 0 && b == 2 || a == 1 && b == 0 || a == 2 && b == 1)
-	{
-		return lose;
-	}
-	else if (a == 0 && b == 1 || a == 1 && b == 2 || a == 2 && b == 0)
+	else if (plyer==Rock&&enemy==Scissors||plyer==Scissors&&enemy==Paper||plyer==Paper&&enemy==Rock)
 	{
 		return win;
+	}
+	else if (plyer==Rock&&enemy==Paper||plyer==Scissors&&enemy==Rock||plyer==Paper&&enemy==Scissors)
+	{
+		return lose;
 	}
 	else
 	{
@@ -32,10 +32,39 @@ handResult jankenResult(int a, int b)
 
 void janken()
 {
-	int plyer;
+	int cin;
 	cout << "グーなら0,チョキなら1,パーなら2を入力してください" << endl;
-	cin >> plyer;
-	switch (jankenResult(plyer, enemyHand()))
+	cin >> cin;
+	hand plyer;
+	hand enemy;
+	int karienemy = enemyHand();
+	if (cin == 0)
+	{
+		plyer = Rock;
+	}
+	else if(cin==1)
+	{
+		plyer = Scissors;
+	}
+	else if (cin == 2)
+	{
+		plyer = Paper;
+	}
+
+	if (karienemy== 0)
+	{
+		enemy = Rock;
+	}
+	else if (karienemy== 1)
+	{
+		enemy = Scissors;
+	}
+	else if (karienemy == 2)
+	{
+		enemy = Paper;
+	}
+
+	switch (jankenResult(plyer, enemy))
 	{
 	case win:
 		cout << "win" << endl;

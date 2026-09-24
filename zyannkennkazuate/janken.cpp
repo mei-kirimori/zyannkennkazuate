@@ -4,12 +4,12 @@
 using namespace std;
 
 
-int enemyhand()
+int enemyHand()
 {
 	return randkai() % 3;
 }
 
-handresult jankenresult(int a, int b)
+handResult jankenResult(int a, int b)
 {
 	if (a == b)
 	{
@@ -35,7 +35,7 @@ void janken()
 	int plyer;
 	cout << "グーなら0,チョキなら1,パーなら2を入力してください" << endl;
 	cin >> plyer;
-	switch (jankenresult(plyer, enemyhand()))
+	switch (jankenResult(plyer, enemyHand()))
 	{
 	case win:
 		cout << "win" << endl;

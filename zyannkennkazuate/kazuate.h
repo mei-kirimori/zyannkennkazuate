@@ -1,19 +1,16 @@
 #pragma once
+#include"randkai.h"
 
 enum judge
 {
 	hit =0,
-	nothit =1
+	nothit =1,
+
+	biggErthanThat = 2,
+	SmallErthanThat = 3
 };
-enum hint
-{
-	Biggerthanthat =0,
-	Smallerthanthat =1
-};
-int rand()
-{
 
-}
-
-
+void hitJudge();
+int searchvalue();
+judge doJudge(int a, int b);
 

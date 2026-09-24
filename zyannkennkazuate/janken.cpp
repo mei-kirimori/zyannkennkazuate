@@ -1,6 +1,34 @@
 ﻿#include<iostream>
 #include"janken.h"
+#include"randkai.h"
 using namespace std;
+
+
+int enemyhand()
+{
+	return randkai() % 3;
+}
+
+handresult jankenresult(int a, int b)
+{
+	if (a == b)
+	{
+		return draw;
+	}
+	else if (a == 0 && b == 2 || a == 1 && b == 0 || a == 2 && b == 1)
+	{
+		return lose;
+	}
+	else if (a == 0 && b == 1 || a == 1 && b == 2 || a == 2 && b == 0)
+	{
+		return win;
+	}
+	else
+	{
+		return error;
+	}
+
+}
 
 void janken()
 {
@@ -15,7 +43,7 @@ void janken()
 	case lose:
 		cout << "lose" << endl;
 		break;
-	case draw :
+	case draw:
 		cout << "draw" << endl;
 		break;
 	case error:
@@ -24,12 +52,4 @@ void janken()
 	default:
 		break;
 	}
-}
-
-int main()
-{
-	for (int i = 0;i < 10; ++i)
-	{
-		janken();
-	}
-}
+};

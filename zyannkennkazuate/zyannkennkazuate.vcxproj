@@ -141,10 +141,13 @@
   <ItemGroup>
     <ClCompile Include="janken.cpp" />
     <ClCompile Include="kazuate.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="rand.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="janken.h" />
     <ClInclude Include="kazuate.h" />
+    <ClInclude Include="randkai.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -8,10 +8,17 @@ int main()
 {
 	for (int i = 0;i < 10; ++i)
 	{
-		janken();
-	}
-	for(int i = 0;i < 10; ++i)
-	{
-		hitJudge();
+		cout << "じゃんけんで遊ぶなら１を数当てゲームなら２を" << endl;
+		int mode;
+		cin >> mode;
+		if (mode == 1)
+		{
+			janken();
+		}
+		else
+		{
+			hitJudge();
+		}
+		
 	}
 }

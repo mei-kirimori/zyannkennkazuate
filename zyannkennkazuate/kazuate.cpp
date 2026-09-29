@@ -3,40 +3,37 @@
 #include"randkai.h"
 using namespace std;
 
-int searchvalue()
-{
-	return randkai() % 100;
-}
+
 bool hint;
-void hitJudge()
+void kazuate(int rand)
 {
 	bool dohit = false;
 	int plyer;
-	const int  enemy = searchvalue();
-	cout << "ヒントありで挑みますか？" << endl << "ありなら1をなしなら0を入力してください" << endl;
+	const int  enemy = rand%100;
+	cout << "Would you like to take it on with hints?" << endl << "Enter 1 for yes or 0 for no" << endl;
 	cin >> hint;
 	if (hint)
 	{
-		cout << "ヒントありで開始します" << endl;
+		cout << "Starting with hints enabled." << endl;
 	}
 	else
 	{
-		cout << "ヒントなしで開始します" << endl;
+		cout << "Start without hints." << endl;
 	};
 	for (;!dohit;)
 	{
-		cout << "０から１００の数字を入力してください" << endl;
+		cout << "Please enter a number between 0 and 100." << endl;
 		cin >> plyer;
 		if (!hint)
 		{
 			switch (doJudge(plyer, enemy))
 			{
 			case hit:
-				cout << "当たり" << endl;
+				cout << "hit" << endl;
 				dohit = true;
 				break;
 			case nothit:
-				cout << "外れ" << endl;
+				cout << "nohit" << endl;
 				break;
 			}
 			return;
@@ -46,14 +43,14 @@ void hitJudge()
 			switch (doJudge(plyer, enemy))
 			{
 			case hit:
-				cout << "当たり" << endl;
+				cout << "hti" << endl;
 				dohit = true;
 				break;
 			case SmallErthanThat:
-				cout << "外れもう少し小さいよ" << endl;
+				cout << "It's a bit smaller than that—you're off the mark." << endl;
 				break;
 			case biggErthanThat:
-				cout << "外れもう少し大きいよ" << endl;
+				cout << "It's a bit further out than that." << endl;
 				break;
 
 			}

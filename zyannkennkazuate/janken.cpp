@@ -1,13 +1,9 @@
 ﻿#include<iostream>
 #include"janken.h"
-#include"randkai.h"
 using namespace std;
 
 
-int enemyHand()
-{
-	return randkai() % 3;
-}
+
 
 handResult jankenResult(hand plyer, hand enemy)
 {
@@ -30,23 +26,23 @@ handResult jankenResult(hand plyer, hand enemy)
 
 }
 
-void janken()
+void janken(int rand)
 {
-	int cin;
-	cout << "グーなら0,チョキなら1,パーなら2を入力してください" << endl;
-	cin >> cin;
-	hand plyer;
-	hand enemy;
-	int karienemy = enemyHand();
-	if (cin == 0)
+	int pcin;
+	cout << "Please enter 0 for Rock, 1 for Scissors, or 2 for Paper." << endl;
+	cin >> pcin;
+	hand plyer = Rock;
+	hand enemy = Rock;
+	int karienemy = rand % 3;
+	if (pcin == 0)
 	{
 		plyer = Rock;
 	}
-	else if(cin==1)
+	else if(pcin==1)
 	{
 		plyer = Scissors;
 	}
-	else if (cin == 2)
+	else if (pcin == 2)
 	{
 		plyer = Paper;
 	}
@@ -76,7 +72,7 @@ void janken()
 		cout << "draw" << endl;
 		break;
 	case error:
-		cout << "入力が正しくありません" << endl;
+		cout << "The input is invalid." << endl;
 		break;
 	default:
 		break;

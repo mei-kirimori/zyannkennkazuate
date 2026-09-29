@@ -10,7 +10,7 @@ enum judge
 	SmallErthanThat = 3
 };
 
-void hitJudge();
+void kazuate(int rand);
 int searchvalue();
 judge doJudge(int a, int b);
 

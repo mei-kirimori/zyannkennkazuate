@@ -1,7 +1,7 @@
 ﻿#pragma once
 #include"randkai.h"
 //gu0,tyoki1,pa2
-void janken();
+void janken(int rand);
 enum  handResult
 {
 	win = 0,

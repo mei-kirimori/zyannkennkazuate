@@ -43,11 +43,11 @@ void kazuate(int rand)
 			switch (doJudge(plyer, enemy))
 			{
 			case hit:
-				cout << "hti" << endl;
+				cout << "hit" << endl;
 				dohit = true;
 				break;
 			case SmallErthanThat:
-				cout << "It's a bit smaller than that—you're off the mark." << endl;
+				cout << "It's a bit smaller than that you're off the mark." << endl;
 				break;
 			case biggErthanThat:
 				cout << "It's a bit further out than that." << endl;

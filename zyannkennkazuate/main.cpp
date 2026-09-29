@@ -8,9 +8,12 @@ using namespace std;
 
 int main()
 {
+	int playCount;
 	srand((unsigned int)time(nullptr));
 	int RAND = rand();
-	for (int i = 0;i < 10; ++i)
+	cout << "Please enter the number of times you want to play." << endl;
+	cin >> playCount;
+	for (int i = 0;i < playCount; ++i)
 	{
 		cout << "Choose 1 to play Rock-Paper-Scissors, or 2 for the number-guessing game." << endl;
 		int mode;
@@ -25,4 +28,5 @@ int main()
 		}
 		
 	}
+	cout << "The game is over. Thank you for playing." << endl;
 }
